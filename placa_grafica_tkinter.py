@@ -1,4 +1,5 @@
-# coding: utf-8
+#! /usr/bin/python
+# -*- coding: utf-8 -*-
 import time
 from tkinter import PhotoImage, NW, Tk, Canvas
 from tkinter.constants import ALL
@@ -73,7 +74,7 @@ def animar(tela, camada_de_atores, fase, passo=0.01, delta_t=0.01):
 
             camada_de_atores.create_line(52, 493, 52 + tamanho_seta * math.cos(angulo_rad),
                                          493 + tamanho_seta * math.sin(angulo_rad), width=1.5)
-            camada_de_atores.create_text(35, 493, text=u"%d°" % angulo)
+            camada_de_atores.create_text(35, 493, text="%d%s" % (angulo, 'º'))
             for ponto in fase.calcular_pontos(tempo):
                 plotar(camada_de_atores, ponto)
             tela.after(passo, _animar)
